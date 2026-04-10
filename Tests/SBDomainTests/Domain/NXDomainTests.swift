@@ -1,16 +1,16 @@
 //  NXDomainTests.swift
-//  NXDomain
+//  SBDomain
 //
-//  Created by Sivakumar Boju on 4/1/26.
+//  Created by Sivakumar Boju on 4/10/26.
 //  Copyright (c) 2026 Near 22. All rights reserved
 //
 
 import XCTest
-@testable import NXDomain
+@testable import SBDomain
 
-final class NXDomainTests: XCTestCase {
+final class SBDomainTests: XCTestCase {
     func testInitializesSuccessfully() {
-        let domain = NXDomain()
+        let domain = SBDomain()
         XCTAssertNotNil(domain)
     }
 }
