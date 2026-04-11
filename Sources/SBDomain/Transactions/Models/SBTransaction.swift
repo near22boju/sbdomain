@@ -15,7 +15,7 @@ public struct SBTransaction: Sendable, Equatable, Identifiable {
     public let key: String
     public let type: SBTransactionType
     public let merchantName: String
-    public let description: String?
+    public let description: String
     public let amount: SBMoney
     public let postedDate: String
     public let fromAccount: String
@@ -27,7 +27,7 @@ public struct SBTransaction: Sendable, Equatable, Identifiable {
         key: String,
         type: SBTransactionType,
         merchantName: String,
-        description: String?,
+        description: String,
         amount: SBMoney,
         postedDate: String,
         fromAccount: String,

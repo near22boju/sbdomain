@@ -6,15 +6,13 @@
 //  Copyright (c) 2026 Near 22. All rights reserved
 //
 
+import Foundation
+
 public extension SBTransaction {
 
     //  MARK: - Computed Properties
 
     var displayDescription: String {
-        guard let description else {
-            return merchantName
-        }
-
         let trimmedDescription = description.trimmingCharacters(in: .whitespacesAndNewlines)
         guard !trimmedDescription.isEmpty else {
             return merchantName

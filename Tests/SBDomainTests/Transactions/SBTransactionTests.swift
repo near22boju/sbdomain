@@ -75,7 +75,7 @@ private extension SBTransactionTests {
         key: String = "txn_1",
         type: SBTransactionType = .debit,
         merchantName: String = "Mb - Cash Advance To - 1785",
-        description: String? = "Bill payment",
+        description: String = "Bill payment",
         amount: SBMoney = SBMoney(value: 200.20, currency: "CAD"),
         postedDate: String = "2021-05-31",
         fromAccount: String = "Momentum Regular Visa",
