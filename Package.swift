@@ -21,7 +21,7 @@ let package = Package(
             name: "SBDomain",
             path: "Sources/SBDomain",
             resources: [
-                .process("Resources")
+                .process("Resources"),
             ]        ),
         .testTarget(
             name: "SBDomainTests", dependencies: ["SBDomain"],

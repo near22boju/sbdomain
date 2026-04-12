@@ -22,5 +22,5 @@ public extension SBTransactionType {
 
     var isDebit: Bool {
         self == .debit
-    }
+    }    
 }

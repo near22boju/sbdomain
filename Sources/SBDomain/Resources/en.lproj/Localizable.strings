@@ -1,4 +1,4 @@
 //  MARK: - Domain Transaction
-"domain.transaction.credit" = "Credit Transaction";
-"domain.transaction.debit" = "Debit Transaction";
+"domain.transaction.credit" = "Credit transaction";
+"domain.transaction.debit" = "Debit transaction";
 "domain.transaction.amount" = "%.2f %@";
