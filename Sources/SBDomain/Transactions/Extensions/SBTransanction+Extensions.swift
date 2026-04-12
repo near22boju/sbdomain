@@ -29,23 +29,4 @@ public extension SBTransaction {
     var displayFromAccount: String {
         "\(fromAccount) \(maskedCardNumber)"
     }
-
-    var displayAmount: String {
-        let value = amount.value
-
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .decimal
-        formatter.minimumFractionDigits = 2
-        formatter.maximumFractionDigits = 2
-
-        let formattedValue = formatter.string(from: NSNumber(value: value)) ?? "\(value)"
-
-        return "\(formattedValue) \(amount.currency)"
-    }
-    
-    var displaySignedAmount: String {
-        let sign = type.isCredit ? "+" : "-"
-        return "\(sign)\(displayAmount)"
-    }
-
 }
