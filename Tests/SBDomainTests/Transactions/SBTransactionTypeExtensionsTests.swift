@@ -12,11 +12,11 @@ import XCTest
 final class SBTransactionTypeExtensionsTests: XCTestCase {
 
     func test_title_returnsCreditTransaction_forCredit() {
-        XCTAssertEqual(SBTransactionType.credit.title, "Credit Transaction")
+        XCTAssertEqual(SBTransactionType.credit.title, "Credit transaction")
     }
 
     func test_title_returnsDebitTransaction_forDebit() {
-        XCTAssertEqual(SBTransactionType.debit.title, "Debit Transaction")
+        XCTAssertEqual(SBTransactionType.debit.title, "Debit transaction")
     }
 
     func test_isCredit_returnsTrue_forCredit() {

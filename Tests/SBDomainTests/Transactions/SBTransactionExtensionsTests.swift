@@ -20,7 +20,7 @@ final class SBTransactionExtensionsTests: XCTestCase {
     func test_displayDescription_returnsMerchantName_whenDescriptionIsNil() {
         let sut = makeTransaction(
             merchantName: "Manulife",
-            description: nil
+            description: ""
         )
 
         XCTAssertEqual(sut.displayDescription, "Manulife")
@@ -63,6 +63,52 @@ final class SBTransactionExtensionsTests: XCTestCase {
         )
 
         XCTAssertEqual(sut.displayFromAccount, "Momentum Regular Visa (8012)")
+    }
+    
+    func test_displayAmount_formatsAmountWithTwoFractionDigits() {
+        let sut = makeTransaction(
+            amount: SBMoney(value: 200.2, currency: "CAD")
+        )
+
+        XCTAssertEqual(sut.displayAmount, "200.20 CAD")
+    }
+    
+    func test_displayAmount_includesCurrency() {
+        let sut = makeTransaction(
+            amount: SBMoney(value: 10, currency: "USD")
+        )
+
+        XCTAssertEqual(sut.displayAmount, "10.00 USD")
+    }
+    
+    func test_displaySignedAmount_returnsNegativePrefix_forDebit() {
+        let sut = makeTransaction(
+            type: .debit,
+            amount: SBMoney(value: 25, currency: "CAD")
+        )
+
+        XCTAssertEqual(sut.displaySignedAmount, "-25.00 CAD")
+    }
+    
+    func test_displaySignedAmount_returnsPositivePrefix_forCredit() {
+        let sut = makeTransaction(
+            type: .credit,
+            amount: SBMoney(value: 25, currency: "CAD")
+        )
+
+        XCTAssertEqual(sut.displaySignedAmount, "+25.00 CAD")
+    }
+    
+    func test_displayDescription_trimsLeadingAndTrailingWhitespace() {
+        let sut = makeTransaction(description: "  Bill payment  ")
+
+        XCTAssertEqual(sut.displayDescription, "Bill payment")
+    }
+    
+    func test_maskedCardNumber_returnsEmptyParentheses_whenCardNumberIsEmpty() {
+        let sut = makeTransaction(fromCardNumber: "")
+
+        XCTAssertEqual(sut.maskedCardNumber, "()")
     }
 }
 

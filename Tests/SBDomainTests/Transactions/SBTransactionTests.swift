@@ -60,11 +60,6 @@ final class SBTransactionTests: XCTestCase {
         XCTAssertEqual(transaction.id, "txn_123")
     }
 
-    func test_description_canBeNil() {
-        let transaction = makeTransaction(description: nil)
-
-        XCTAssertNil(transaction.description)
-    }
 }
 
 // MARK: - Helpers
