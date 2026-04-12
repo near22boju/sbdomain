@@ -1,5 +1,4 @@
-// swift-tools-version: 6.2
-// The swift-tools-version declares the minimum version of Swift required to build this package.
+// swift-tools-version: 6.0
 
 import PackageDescription
 
@@ -21,10 +20,12 @@ let package = Package(
             name: "SBDomain",
             path: "Sources/SBDomain",
             resources: [
-                .process("Resources"),
-            ]        ),
+                .process("Resources")
+            ]
+        ),
         .testTarget(
-            name: "SBDomainTests", dependencies: ["SBDomain"],
+            name: "SBDomainTests",
+            dependencies: ["SBDomain"]
         ),
     ]
 )
