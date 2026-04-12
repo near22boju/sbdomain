@@ -1,15 +1,13 @@
-
 ---
 
-## 📦 Packages
-
-### SBViews (UI Layer)
-- SwiftUI views and reusable components  
+### SBDomain (Core Layer)
+- Pure models and contracts (no external dependencies)  
 - Examples:
-  - SBTransactionListView  
-  - SBTransactionRowView  
-  - SBCardView  
-  - SBLabelValueSection  
-  - SBMoreOrLessView  
+  - SBTransaction  
+  - SBMoney  
+  - SBTransactionType  
+  - SBTransactionRepository  
+  - SBTransactionLocalRepository  
+  - SBTransactionRemoteService  
 
 ---
